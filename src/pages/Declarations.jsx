@@ -8,7 +8,6 @@ export default function Declarations() {
       <SectionHeader
         eyebrow="declaracoes"
         title="Uma declaracao guardada so para voce"
-        description="Se voce chegou ate aqui, e porque eu queria deixar uma parte ainda mais especial so para voce ler."
         icon={Sparkles}
       />
 
