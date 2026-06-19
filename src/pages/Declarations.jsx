@@ -15,7 +15,10 @@ export default function Declarations() {
       <article className="declaration-letter heart-pattern overflow-hidden rounded-lg border border-white/70 bg-white/80 p-6 shadow-soft backdrop-blur sm:p-10">
         <div className="mb-6 inline-flex items-center gap-3">
           <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-cherry text-white shadow-card">
-            <Heart className="h-8 w-8 fill-white animate-heartbeat" aria-hidden="true" />
+            <Heart
+              className="h-8 w-8 fill-white animate-heartbeat"
+              aria-hidden="true"
+            />
           </span>
           <InteractiveEmoji
             symbol="🍒"
@@ -33,12 +36,23 @@ export default function Declarations() {
         </h2>
         <div className="mt-6 space-y-5 text-lg leading-8 text-ink/75">
           <p>
-            Minha coxinha, se você está lendo isso, significa que este site
-            ainda está em processo de construção, assim como esta cartinha.
-            Feliz Dia dos Namorados. Fique sabendo que eu te amo muito e que,
-            com certeza, ainda vou completar tudo isso e deixar bom o suficiente
-            para ser uma área onde você venha para se lembrar de nós, se sentir
-            confortável, amada e, talvez, matar um pouco da saudade.
+            Meu amor, mô, mozi, momo, minha coxinha, bê, bebê, meu bem,
+            Clarinha, Tah, gatinha… esses são só alguns dos muitos apelidos
+            bobos e carinhosos que eu uso com você.
+          </p>
+          <p>
+            O Junior de dois anos atrás jamais imaginaria usar sequer um deles
+            com alguém. Mas aí você apareceu na minha vida do nada, mudou tudo,
+            abalou tudo, deu sentido às coisas e deixou meus dias muito mais
+            alegres.
+          </p>
+          <p>Perto ou longe de mim, tudo fica melhor com você.</p>
+          <p>
+            Eu te amo mais que tudo. Mil textos ou cartinhas ainda não seriam
+            suficientes para explicar tudo o que eu sinto por você. Por isso,
+            fiz esse cantinho nosso. Ele não consegue explicar completamente o
+            nosso amor, mas mostra um pouco da nossa história e esse amor
+            indescritível que a gente vive.
           </p>
         </div>
       </article>
