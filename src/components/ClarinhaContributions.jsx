@@ -199,7 +199,7 @@ export function ClarinhaEditableText({
         (storedText ? (
           <ClarinhaQuote text={storedText} />
         ) : (
-          <p className="leading-7 text-ink/70">{defaultText}</p>
+          <p className="whitespace-pre-line leading-7 text-ink/70">{defaultText}</p>
         ))}
 
       {canAdd && (
