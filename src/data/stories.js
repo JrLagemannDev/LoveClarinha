@@ -3,7 +3,7 @@ export const stories = [
     id: 'primeiro-capitulo',
     date: 'Comeco de tudo',
     title: 'Como nos conhecemos',
-    image: '/stories-como-nos-conhecemos.jpeg',
+    image: '/stories-como-nos-conhecemos-foto-1.jpg',
     text: `Certo dia, eu e meus amigos fomos para mais um dos rolês que começamos a fazer todo mês em São Paulo, dessa vez em uma festa universitária em Itaquera.
 
 Antes de ir, ouvi seu nome pela primeira vez. A namorada do meu amigo comentou sobre você depois que eu perguntei, meio na brincadeira, se ela tinha alguma amiga para me apresentar. Ela disse: “Tenho a Clara, ela é muito legal, acho que você vai gostar dela.” Na hora, nem dei muita atenção, porque eu só tinha perguntado por brincadeira.
