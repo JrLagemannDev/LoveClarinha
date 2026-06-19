@@ -11,7 +11,10 @@ import { useState } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 
 const MAX_TEXT_LENGTH = 500;
+const MAX_STORY_TEXT_LENGTH = 2500;
+const MAX_STORY_TITLE_LENGTH = 80;
 const COMMENT_STORAGE_PREFIX = 'loveclarinha:clarinhaComments:v1';
+const STORY_STORAGE_PREFIX = 'loveclarinha:clarinhaStories:v1';
 const TEXT_STORAGE_PREFIX = 'loveclarinha:clarinhaTexts:v1';
 
 function getCommentKey(itemId) {
@@ -20,6 +23,10 @@ function getCommentKey(itemId) {
 
 function getTextKey(section, itemId) {
   return `${TEXT_STORAGE_PREFIX}:${section}:${itemId}`;
+}
+
+function getStoryKey(section, itemId) {
+  return `${STORY_STORAGE_PREFIX}:${section}:${itemId}`;
 }
 
 function loadStoredText(key) {
@@ -36,6 +43,29 @@ function saveStoredText(key, value) {
 
 function removeStoredText(key) {
   localStorage.removeItem(key);
+}
+
+function loadStoredStory(key) {
+  try {
+    const rawStory = localStorage.getItem(key);
+
+    if (!rawStory) {
+      return null;
+    }
+
+    const story = JSON.parse(rawStory);
+
+    return {
+      title: typeof story.title === 'string' ? story.title : '',
+      text: typeof story.text === 'string' ? story.text : '',
+    };
+  } catch {
+    return null;
+  }
+}
+
+function saveStoredStory(key, story) {
+  localStorage.setItem(key, JSON.stringify(story));
 }
 
 function MenuIconButton({ label, isOpen, onClick }) {
@@ -123,6 +153,72 @@ function TextForm({
       />
       <p className="contribution-counter text-right text-xs font-black text-white/70">
         {text.length}/{MAX_TEXT_LENGTH}
+      </p>
+      <button type="submit" className="btn-secondary w-full">
+        {submitLabel}
+      </button>
+    </form>
+  );
+}
+
+function StoryForm({
+  initialTitle = '',
+  initialText = '',
+  label,
+  placeholder,
+  submitLabel,
+  onCancel,
+  onSubmit,
+}) {
+  const [title, setTitle] = useState(
+    initialTitle.slice(0, MAX_STORY_TITLE_LENGTH),
+  );
+  const [text, setText] = useState(initialText.slice(0, MAX_STORY_TEXT_LENGTH));
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const trimmedTitle = title.trim().slice(0, MAX_STORY_TITLE_LENGTH);
+    const trimmedText = text.trim().slice(0, MAX_STORY_TEXT_LENGTH);
+
+    if (!trimmedTitle || !trimmedText) {
+      return;
+    }
+
+    onSubmit({ title: trimmedTitle, text: trimmedText });
+  }
+
+  return (
+    <form
+      className="space-y-3 rounded-lg border border-white/30 bg-white/10 p-3"
+      onSubmit={handleSubmit}
+    >
+      <div className="flex items-center justify-between gap-3">
+        <span className="text-sm font-black text-white">{label}</span>
+        <button
+          type="button"
+          className="close-icon-dark inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/90 transition hover:scale-105"
+          aria-label="Cancelar"
+          onClick={onCancel}
+        >
+          <X className="close-icon-dark h-4 w-4" aria-hidden="true" />
+        </button>
+      </div>
+      <input
+        className="input-field"
+        maxLength={MAX_STORY_TITLE_LENGTH}
+        value={title}
+        onChange={(event) => setTitle(event.target.value)}
+        placeholder="Titulo da historia"
+      />
+      <textarea
+        className="input-field h-56 resize-none overflow-y-auto"
+        maxLength={MAX_STORY_TEXT_LENGTH}
+        value={text}
+        onChange={(event) => setText(event.target.value)}
+        placeholder={placeholder}
+      />
+      <p className="contribution-counter text-right text-xs font-black text-white/70">
+        {text.length}/{MAX_STORY_TEXT_LENGTH}
       </p>
       <button type="submit" className="btn-secondary w-full">
         {submitLabel}
@@ -238,6 +334,110 @@ export function ClarinhaEditableText({
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+export function ClarinhaEditableStory({
+  section,
+  itemId,
+  defaultTitle = '',
+  defaultText = '',
+  addLabel = 'Adicionar Historia',
+  editLabel = 'Editar Historia',
+  placeholder = 'Escreva essa historia...',
+}) {
+  const { isLoggedIn } = useAuth();
+  const storageKey = getStoryKey(section, itemId);
+  const legacyTextKey = getTextKey(section, itemId);
+  const [storedStory, setStoredStory] = useState(() => {
+    const story = loadStoredStory(storageKey);
+
+    if (story) {
+      return story;
+    }
+
+    const legacyText = loadStoredText(legacyTextKey);
+
+    return legacyText ? { title: defaultTitle, text: legacyText } : null;
+  });
+  const [isEditing, setIsEditing] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const titleToShow = storedStory?.title || defaultTitle;
+  const textToShow = storedStory?.text || defaultText;
+  const hasStory = Boolean(titleToShow.trim() || textToShow.trim());
+
+  function handleSave(nextStory) {
+    saveStoredStory(storageKey, nextStory);
+    setStoredStory(nextStory);
+    setIsEditing(false);
+    setIsMenuOpen(false);
+  }
+
+  if (isEditing) {
+    return (
+      <StoryForm
+        label={hasStory ? editLabel : addLabel}
+        initialTitle={titleToShow}
+        initialText={textToShow}
+        submitLabel="Salvar"
+        placeholder={placeholder}
+        onCancel={() => setIsEditing(false)}
+        onSubmit={handleSave}
+      />
+    );
+  }
+
+  if (!hasStory) {
+    return isLoggedIn ? (
+      <button
+        type="button"
+        className="inline-flex items-center gap-2 rounded-full bg-cherry px-4 py-2 text-xs font-black text-white shadow-card transition hover:-translate-y-0.5 hover:bg-red-700"
+        onClick={() => setIsEditing(true)}
+      >
+        <Plus className="h-4 w-4 text-white" aria-hidden="true" />
+        {addLabel}
+      </button>
+    ) : null;
+  }
+
+  return (
+    <div>
+      {titleToShow && (
+        <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">
+          {titleToShow}
+        </h2>
+      )}
+      {textToShow && (
+        <p className="mt-4 whitespace-pre-line leading-7 text-ink/70">
+          {textToShow}
+        </p>
+      )}
+
+      {isLoggedIn && (
+        <div className="relative mt-5">
+          <MenuIconButton
+            label="Opcoes da historia"
+            isOpen={isMenuOpen}
+            onClick={() => setIsMenuOpen((value) => !value)}
+          />
+          {isMenuOpen && (
+            <ActionMenu>
+              <ActionMenuButton
+                icon={Pencil}
+                onClick={() => {
+                  setIsEditing(true);
+                  setIsMenuOpen(false);
+                }}
+              >
+                {editLabel}
+              </ActionMenuButton>
+            </ActionMenu>
+          )}
+        </div>
+      )}
+
+      <ClarinhaCommentMenu itemId={itemId} />
     </div>
   );
 }

@@ -1,8 +1,5 @@
 import { BookHeart } from 'lucide-react';
-import {
-  ClarinhaCommentMenu,
-  ClarinhaEditableText,
-} from '../components/ClarinhaContributions.jsx';
+import { ClarinhaEditableStory } from '../components/ClarinhaContributions.jsx';
 import InteractiveEmoji from '../components/InteractiveEmoji.jsx';
 import SectionHeader from '../components/SectionHeader.jsx';
 import { stories } from '../data/stories.js';
@@ -40,8 +37,12 @@ export default function Stories() {
               }
               aria-label={isBlankStory ? 'Historia em branco' : undefined}
             >
-              {!isBlankStory && (
-                <div className="story-card-content p-5 sm:p-6 md:p-8">
+              <div
+                className={`story-card-content p-5 sm:p-6 md:p-8 ${
+                  isBlankStory ? 'flex min-h-48 items-start' : ''
+                }`}
+              >
+                {story.date && (
                   <div className="mb-3 flex items-center justify-between gap-3">
                     <span className="text-sm font-bold uppercase tracking-[0.18em] text-cherry">
                       {story.date}
@@ -52,23 +53,17 @@ export default function Stories() {
                       className="h-11 w-11 shrink-0"
                     />
                   </div>
-                  <h2 className="mt-3 font-display text-3xl font-bold text-ink sm:text-4xl">
-                    {story.title}
-                  </h2>
-                  <div className="mt-4">
-                    <ClarinhaEditableText
-                      section="historias"
-                      itemId={story.id}
-                      defaultText={story.text}
-                      addLabel="Adicionar Historia"
-                      editLabel="Editar Historia"
-                      deleteLabel="Excluir Historia"
-                      placeholder="Escreva essa historia em ate 500 letras..."
-                    />
-                    <ClarinhaCommentMenu itemId={story.id} />
-                  </div>
-                </div>
-              )}
+                )}
+                <ClarinhaEditableStory
+                  section="historias"
+                  itemId={story.id}
+                  defaultTitle={story.title}
+                  defaultText={story.text}
+                  addLabel="Adicionar Historia"
+                  editLabel="Editar Historia"
+                  placeholder="Escreva essa historia..."
+                />
+              </div>
             </article>
           );
         })}
