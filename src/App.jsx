@@ -5,18 +5,27 @@ import {
   Routes,
   useLocation,
 } from 'react-router-dom';
-import { Suspense, lazy } from 'react';
+import { useEffect } from 'react';
 import Layout from './components/Layout.jsx';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
+import Declarations from './pages/Declarations.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Music from './pages/Music.jsx';
+import NotFound from './pages/NotFound.jsx';
+import Photos from './pages/Photos.jsx';
+import Stories from './pages/Stories.jsx';
+import Watchlist from './pages/Watchlist.jsx';
 
-const Declarations = lazy(() => import('./pages/Declarations.jsx'));
-const Home = lazy(() => import('./pages/Home.jsx'));
-const Login = lazy(() => import('./pages/Login.jsx'));
-const Music = lazy(() => import('./pages/Music.jsx'));
-const NotFound = lazy(() => import('./pages/NotFound.jsx'));
-const Photos = lazy(() => import('./pages/Photos.jsx'));
-const Stories = lazy(() => import('./pages/Stories.jsx'));
-const Watchlist = lazy(() => import('./pages/Watchlist.jsx'));
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function PrivateRoute({ children }) {
   const { isLoggedIn } = useAuth();
@@ -33,26 +42,25 @@ export default function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <ScrollToTop />
         <Layout>
-          <Suspense fallback={<div className="page-shell page-section">Carregando...</div>}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/fotos" element={<Photos />} />
-              <Route path="/historias" element={<Stories />} />
-              <Route path="/filmes-series" element={<Watchlist />} />
-              <Route path="/musicas" element={<Music />} />
-              <Route path="/login" element={<Login />} />
-              <Route
-                path="/declaracoes"
-                element={
-                  <PrivateRoute>
-                    <Declarations />
-                  </PrivateRoute>
-                }
-              />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/fotos" element={<Photos />} />
+            <Route path="/historias" element={<Stories />} />
+            <Route path="/filmes-series" element={<Watchlist />} />
+            <Route path="/musicas" element={<Music />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/declaracoes"
+              element={
+                <PrivateRoute>
+                  <Declarations />
+                </PrivateRoute>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </Layout>
       </AuthProvider>
     </BrowserRouter>
