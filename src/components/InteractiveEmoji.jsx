@@ -480,6 +480,7 @@ export default function InteractiveEmoji({
       type="button"
       aria-label={label}
       className={`emoji-pop group fixed left-0 top-0 z-[90] inline-flex items-center justify-center border-0 bg-transparent p-0 leading-none shadow-none outline-none will-change-transform focus-visible:ring-2 focus-visible:ring-white/80 ${sizeClass} ${idleClass} cursor-grab pointer-events-auto active:cursor-grabbing`}
+      style={{ visibility: isRegistered ? 'visible' : 'hidden' }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -503,7 +504,7 @@ export default function InteractiveEmoji({
       style={style}
       aria-hidden="true"
     >
-      {layer && isRegistered ? createPortal(emojiButton, layer) : null}
+      {layer ? createPortal(emojiButton, layer) : null}
     </span>
   );
 }
