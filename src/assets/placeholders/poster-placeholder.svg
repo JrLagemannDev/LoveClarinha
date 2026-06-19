@@ -1,0 +1,10 @@
+<svg width="760" height="1000" viewBox="0 0 760 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="1000" fill="#21161D"/>
+  <rect x="58" y="68" width="644" height="864" rx="30" fill="#FFE8F3"/>
+  <circle cx="380" cy="318" r="146" fill="#FFFFFF" opacity="0.8"/>
+  <path d="M380 402C332 360 258 304 258 230C258 184 294 148 340 148C364 148 392 162 380 184C368 162 396 148 420 148C466 148 502 184 502 230C502 304 428 360 380 402Z" fill="#C9184A"/>
+  <text x="380" y="596" text-anchor="middle" font-family="Playfair Display, serif" font-size="58" font-weight="700" fill="#21161D">Poster</text>
+  <text x="380" y="660" text-anchor="middle" font-family="Nunito, sans-serif" font-size="28" fill="#7C425B">Filme ou serie</text>
+  <rect x="160" y="742" width="440" height="18" rx="9" fill="#C9184A" opacity="0.28"/>
+  <rect x="210" y="790" width="340" height="18" rx="9" fill="#C9184A" opacity="0.22"/>
+</svg>

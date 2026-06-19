@@ -1,0 +1,18 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#FFF7FB"/>
+  <path d="M0 0H900V1200H0V0Z" fill="url(#paint0_linear)"/>
+  <circle cx="675" cy="250" r="170" fill="#FFFFFF" opacity="0.7"/>
+  <circle cx="210" cy="1020" r="180" fill="#FFADD2" opacity="0.38"/>
+  <path d="M440 375C463 328 531 336 550 394C574 467 500 528 450 568C400 528 326 467 350 394C369 336 417 328 440 375Z" fill="#DF2B7D"/>
+  <path d="M505 365C534 312 610 321 633 386C661 467 578 536 522 582C486 551 444 512 424 466" stroke="#21161D" stroke-width="12" stroke-linecap="round"/>
+  <text x="450" y="760" text-anchor="middle" font-family="Playfair Display, serif" font-size="62" font-weight="700" fill="#21161D">Jeitinho dela</text>
+  <text x="450" y="823" text-anchor="middle" font-family="Nunito, sans-serif" font-size="30" fill="#7C425B">Um jeitinho impossivel de esquecer</text>
+  <text x="145" y="210" font-family="Playfair Display, serif" font-size="72" fill="#C9184A" opacity="0.45">♡</text>
+  <text x="710" y="965" font-family="Playfair Display, serif" font-size="76" fill="#C9184A" opacity="0.45">♡</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="900" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE8F3"/>
+      <stop offset="1" stop-color="#FFFFFF"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,9 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#FFCFE6"/>
+  <rect x="94" y="114" width="712" height="972" rx="36" fill="#FFFFFF" opacity="0.78"/>
+  <circle cx="450" cy="440" r="160" fill="#FFE8F3"/>
+  <path d="M450 520C400 474 328 420 328 344C328 296 366 258 414 258C437 258 462 270 450 292C438 270 463 258 486 258C534 258 572 296 572 344C572 420 500 474 450 520Z" fill="#C9184A"/>
+  <text x="450" y="715" text-anchor="middle" font-family="Playfair Display, serif" font-size="60" font-weight="700" fill="#21161D">Minha favorita</text>
+  <text x="450" y="778" text-anchor="middle" font-family="Nunito, sans-serif" font-size="30" fill="#7C425B">Uma lembranca para olhar de novo</text>
+  <path d="M286 902C330 850 382 848 430 902C478 848 530 850 574 902" stroke="#C9184A" stroke-width="14" stroke-linecap="round"/>
+</svg>

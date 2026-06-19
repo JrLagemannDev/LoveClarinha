@@ -1,0 +1,8 @@
+<svg width="1200" height="1000" viewBox="0 0 1200 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1000" fill="#FFCFE6"/>
+  <path d="M180 500C180 321 325 176 504 176H696C875 176 1020 321 1020 500C1020 679 875 824 696 824H504C325 824 180 679 180 500Z" fill="#FFFFFF" opacity="0.77"/>
+  <text x="600" y="470" text-anchor="middle" font-family="Playfair Display, serif" font-size="78" font-weight="700" fill="#21161D">Nos dois</text>
+  <text x="600" y="538" text-anchor="middle" font-family="Nunito, sans-serif" font-size="33" fill="#7C425B">Sempre melhor quando e com voce</text>
+  <text x="380" y="655" font-family="Playfair Display, serif" font-size="90" fill="#C9184A">♡</text>
+  <text x="735" y="655" font-family="Playfair Display, serif" font-size="90" fill="#C9184A">♡</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg width="1200" height="1000" viewBox="0 0 1200 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="1000" fill="#FFF7FB"/>
+  <circle cx="280" cy="272" r="150" fill="#FFE8F3"/>
+  <circle cx="910" cy="720" r="190" fill="#FFCFE6" opacity="0.78"/>
+  <path d="M600 635C520 566 400 474 400 352C400 276 460 216 534 216C572 216 616 238 600 272C584 238 628 216 666 216C740 216 800 276 800 352C800 474 680 566 600 635Z" fill="#C9184A"/>
+  <text x="600" y="760" text-anchor="middle" font-family="Playfair Display, serif" font-size="66" font-weight="700" fill="#21161D">Foto de voces</text>
+  <text x="600" y="825" text-anchor="middle" font-family="Nunito, sans-serif" font-size="32" fill="#7C425B">Um momento nosso guardado aqui</text>
+</svg>

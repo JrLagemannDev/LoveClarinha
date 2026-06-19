@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-width: 320px;
+    min-height: 100vh;
+    color: #fff7fb;
+    background: linear-gradient(135deg, #ff7db8 0%, #f84f9a 42%, #c9184a 100%);
+    font-family: Nunito, sans-serif;
+    font-weight: 700;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font-family: Nunito, sans-serif;
+  }
+
+  body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='240' height='150' viewBox='0 0 240 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.72'%3E%3Cpath d='M34 56C20 44 8 34 8 20C8 11 15 5 24 5C29 5 33 8 35 13C37 8 41 5 46 5C55 5 62 11 62 20C62 34 50 44 36 56L35 57L34 56Z' fill='%23FFEEF6'/%3E%3Cpath d='M34 56C20 44 8 34 8 20C8 11 15 5 24 5C29 5 33 8 35 13C37 8 41 5 46 5C55 5 62 11 62 20C62 34 50 44 36 56L35 57L34 56Z' fill='%23E11D48' fill-opacity='0.48'/%3E%3Cpath d='M145 54C149 36 162 22 184 16' stroke='%232F8F4E' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3Cpath d='M159 58C165 40 178 32 198 34' stroke='%231F7A3A' stroke-width='7' stroke-linecap='round' fill='none'/%3E%3Cpath d='M181 30C188 17 200 14 211 19C205 33 193 37 181 30Z' fill='%233FA35B'/%3E%3Ccircle cx='129' cy='88' r='24' fill='%23C9184A'/%3E%3Ccircle cx='164' cy='91' r='22' fill='%23E11D48'/%3E%3Cellipse cx='121' cy='78' rx='7' ry='5' fill='%23FFE1EA'/%3E%3Cellipse cx='157' cy='82' rx='6' ry='5' fill='%23FFE1EA'/%3E%3C/g%3E%3Cg opacity='0.6' transform='translate(0 90)'%3E%3Cpath d='M82 52C70 42 60 32 60 20C60 12 66 6 74 6C79 6 83 9 85 14C87 9 91 6 96 6C104 6 110 12 110 20C110 32 100 42 88 52L85 55L82 52Z' fill='%23FFFFFF'/%3E%3Cpath d='M82 52C70 42 60 32 60 20C60 12 66 6 74 6C79 6 83 9 85 14C87 9 91 6 96 6C104 6 110 12 110 20C110 32 100 42 88 52L85 55L82 52Z' fill='%23C9184A' fill-opacity='0.42'/%3E%3Cpath d='M206 50C210 34 221 22 238 18' stroke='%232F8F4E' stroke-width='6' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='192' cy='80' r='20' fill='%23C9184A'/%3E%3Ccircle cx='220' cy='82' r='19' fill='%23E11D48'/%3E%3Cellipse cx='186' cy='72' rx='6' ry='4' fill='%23FFE1EA'/%3E%3C/g%3E%3C/svg%3E");
+    background-position: 0 0;
+    background-size: 240px 150px;
+    opacity: 0.82;
+    background-attachment: scroll;
+    will-change: background-position;
+    animation: diagonal-wallpaper 18s linear infinite;
+  }
+
+  body::after {
+    display: none;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  main [class*='text-ink'] {
+    color: rgba(255, 247, 251, 0.98) !important;
+    text-shadow:
+      0 2px 8px rgba(127, 13, 46, 0.45),
+      0 1px 0 rgba(127, 13, 46, 0.32);
+  }
+
+  main p,
+  main li {
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(127, 13, 46, 0.35);
+  }
+
+  main .font-display,
+  main h1,
+  main h2,
+  main h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    text-shadow:
+      0 3px 16px rgba(127, 13, 46, 0.62),
+      0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+
+  main .input-field {
+    color: #21161d !important;
+    font-weight: 800;
+    text-shadow: none;
+  }
+
+  main .input-field::placeholder {
+    color: rgba(33, 22, 29, 0.52);
+  }
+
+  main .readable-card,
+  main .readable-card [class*='text-ink'],
+  main .readable-card [class*='text-cherry'] {
+    color: rgba(255, 247, 251, 0.98) !important;
+  }
+
+  main .readable-card p,
+  main .readable-card li,
+  main .readable-card span:not(.card-title):not(.rating-star):not(.rating-star-fill):not(.rating-star-empty) {
+    color: rgba(255, 247, 251, 0.98) !important;
+    text-shadow: 0 2px 8px rgba(127, 13, 46, 0.35) !important;
+  }
+
+  main .readable-card h2,
+  main .readable-card h3,
+  main .readable-card .card-title {
+    color: #21161d !important;
+    text-shadow: none !important;
+  }
+
+  main .readable-card .rating-star-empty {
+    color: rgba(255, 255, 255, 0.38) !important;
+    text-shadow: none !important;
+  }
+
+  main .readable-card .rating-star-fill {
+    color: #fde047 !important;
+    text-shadow: 0 2px 8px rgba(91, 8, 35, 0.28) !important;
+  }
+
+  main .readable-card .contribution-author,
+  main .readable-card .contribution-counter {
+    color: rgba(229, 231, 235, 0.82) !important;
+    text-shadow: none !important;
+  }
+
+  main .readable-card .contribution-quote {
+    color: rgba(255, 247, 251, 0.98) !important;
+    scrollbar-color: rgba(255, 255, 255, 0.55) rgba(255, 255, 255, 0.12);
+  }
+
+  main .close-icon-dark,
+  main .close-icon-dark svg,
+  main svg.close-icon-dark {
+    color: #21161d !important;
+    stroke: #21161d !important;
+    text-shadow: none !important;
+  }
+
+  main .declaration-letter,
+  main .declaration-letter [class*='text-ink'],
+  main .declaration-letter p,
+  main .declaration-letter h2 {
+    color: #21161d !important;
+    text-shadow: none !important;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .page-section {
+    @apply py-10 sm:py-14 lg:py-16;
+  }
+
+  .card {
+    @apply rounded-lg border border-white/70 bg-cherry/75 text-white shadow-card backdrop-blur transition duration-300;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-blush-200 hover:shadow-soft;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-cherry px-5 py-3 text-sm font-black text-white shadow-card transition duration-300 hover:-translate-y-0.5 hover:bg-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cherry focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/80 bg-white/95 px-5 py-3 text-sm font-black text-cherry shadow-card transition duration-300 hover:-translate-y-0.5 hover:border-cherry/30 hover:bg-blush-50 hover:text-red-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-cherry focus-visible:ring-offset-2;
+  }
+
+  .icon-button {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/90 text-ink shadow-card transition duration-300 hover:scale-105 hover:text-cherry focus:outline-none focus-visible:ring-2 focus-visible:ring-cherry focus-visible:ring-offset-2;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-ink/10 bg-white/90 px-4 py-3 text-ink outline-none transition duration-300 placeholder:text-ink/40 focus:border-cherry focus:ring-4 focus:ring-blush-200;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-black text-white/90 transition duration-300 hover:scale-105 hover:bg-white/20 hover:text-white;
+  }
+
+  .nav-link-active {
+    @apply bg-white text-cherry shadow-card;
+  }
+}
+
+.heart-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.heart-pattern::after {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: '♡  ♡  ♡  ♡  ♡  ♡';
+  color: rgba(201, 24, 74, 0.14);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(3rem, 12vw, 9rem);
+  line-height: 1.3;
+  word-spacing: 1.8rem;
+  transform: rotate(-12deg) translateY(12%);
+  white-space: pre-wrap;
+}
+
+.modal-backdrop {
+  background: rgba(33, 22, 29, 0.72);
+}
+
+.emoji-pop {
+  line-height: 1;
+  touch-action: manipulation;
+  user-select: none;
+  font-variant-emoji: emoji;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  filter:
+    drop-shadow(0 12px 16px rgba(91, 8, 35, 0.42))
+    drop-shadow(0 3px 5px rgba(127, 13, 46, 0.28));
+  text-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@keyframes diagonal-wallpaper {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: -240px -150px;
+  }
+}

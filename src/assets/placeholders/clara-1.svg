@@ -1,0 +1,13 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="#FFE8F3"/>
+  <circle cx="148" cy="170" r="92" fill="#FFFFFF" opacity="0.72"/>
+  <circle cx="730" cy="980" r="150" fill="#FFCFE6" opacity="0.9"/>
+  <path d="M450 740C392 690 300 620 300 522C300 460 348 412 408 412C438 412 471 428 450 454C429 428 462 412 492 412C552 412 600 460 600 522C600 620 508 690 450 740Z" fill="#C9184A"/>
+  <text x="450" y="820" text-anchor="middle" font-family="Playfair Display, serif" font-size="64" font-weight="700" fill="#21161D">Foto da Clarinha</text>
+  <text x="450" y="885" text-anchor="middle" font-family="Nunito, sans-serif" font-size="30" fill="#7C425B">Um sorriso guardado com carinho</text>
+  <g opacity="0.55" fill="#C9184A">
+    <text x="120" y="1010" font-family="Playfair Display, serif" font-size="82">♡</text>
+    <text x="710" y="250" font-family="Playfair Display, serif" font-size="82">♡</text>
+    <text x="680" y="430" font-family="Playfair Display, serif" font-size="54">♡</text>
+  </g>
+</svg>
