@@ -8,8 +8,7 @@ export default function Music() {
     <section className="mx-auto w-full max-w-[92rem] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
       <SectionHeader
         eyebrow="nossas musicas"
-        title="Trilha sonora dos momentos de voces"
-        description="Agora da para ouvir as musicas direto aqui, sem sair do site."
+        title="trilha sonora de JURA (Junior + Clara) ❤️🎵"
         icon={Music2}
       />
 
