@@ -16,6 +16,15 @@
     background: linear-gradient(135deg, #ff7db8 0%, #f84f9a 42%, #c9184a 100%);
     font-family: Nunito, sans-serif;
     font-weight: 700;
+    caret-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  body * {
+    caret-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
   }
 
   button,
@@ -23,6 +32,16 @@
   textarea,
   select {
     font-family: Nunito, sans-serif;
+  }
+
+  input,
+  textarea,
+  select,
+  [contenteditable='true'],
+  [contenteditable='true'] * {
+    caret-color: auto;
+    user-select: text;
+    -webkit-user-select: text;
   }
 
   body::before {
