@@ -30,8 +30,7 @@ export default function Login() {
         <div className="mx-auto max-w-xl">
           <SectionHeader
             eyebrow="surpresa aberta"
-            title="A area especial esta liberada"
-            description="Agora voce pode entrar no pedacinho mais guardado desse cantinho."
+            title="A area especial está liberada"
             icon={LockKeyhole}
           />
           <div className="card readable-card p-6 text-center">
