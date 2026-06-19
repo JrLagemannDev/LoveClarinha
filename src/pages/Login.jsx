@@ -57,13 +57,6 @@ export default function Login() {
   return (
     <section className="page-shell page-section">
       <div className="mx-auto max-w-xl">
-        <SectionHeader
-          eyebrow="so para voce"
-          title="Entre para abrir a surpresa"
-          description="Tem uma declaracao esperando por voce aqui dentro."
-          icon={LockKeyhole}
-        />
-
         <form className="card readable-card p-6" onSubmit={handleSubmit}>
           <label className="mb-4 block">
             <span className="mb-2 block text-sm font-semibold text-ink">
