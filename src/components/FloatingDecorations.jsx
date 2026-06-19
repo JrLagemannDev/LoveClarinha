@@ -3,7 +3,7 @@ import InteractiveEmoji from './InteractiveEmoji.jsx';
 const decorations = [
   {
     id: 'heart-left',
-    label: 'Coração vermelho decorativo',
+    label: 'Coracao vermelho decorativo',
     symbol: '❤️',
     className: 'left-3 top-28 sm:left-8',
     delay: '0s',
@@ -40,28 +40,28 @@ const decorations = [
     id: 'cherry-middle-right',
     label: 'Cereja decorativa lateral',
     symbol: '🍒',
-    className: 'right-28 top-[58%]',
+    className: 'right-8 top-[58%] sm:right-28',
     delay: '0.7s',
   },
   {
     id: 'heart-middle-left',
     label: 'Coracao vermelho decorativo lateral',
     symbol: '❤️',
-    className: 'left-20 top-[62%]',
+    className: 'left-5 top-[62%] sm:left-20',
     delay: '2.8s',
   },
   {
     id: 'cherry-low-right',
     label: 'Cereja decorativa baixa',
     symbol: '🍒',
-    className: 'bottom-10 right-28',
+    className: 'bottom-10 right-20 sm:right-28',
     delay: '3.2s',
   },
   {
     id: 'heart-low-left',
     label: 'Coracoes rosas decorativos',
     symbol: '💕',
-    className: 'bottom-8 left-32',
+    className: 'bottom-8 left-20 sm:left-32',
     delay: '3.7s',
   },
   {
@@ -79,11 +79,11 @@ export default function FloatingDecorations() {
       {decorations.map(({ id, label, symbol, className, delay }) => (
         <InteractiveEmoji
           key={id}
-          className={`pointer-events-auto absolute hidden h-16 w-16 items-center justify-center md:inline-flex ${className}`}
+          className={`pointer-events-auto absolute inline-flex h-11 w-11 items-center justify-center md:h-16 md:w-16 ${className}`}
           label={label}
           symbol={symbol}
           displayClass=""
-          sizeClass="text-5xl"
+          sizeClass="text-3xl md:text-5xl"
           style={{ animationDelay: delay }}
         />
       ))}

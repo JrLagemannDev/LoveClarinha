@@ -209,8 +209,10 @@
 
 .emoji-pop {
   line-height: 1;
-  touch-action: manipulation;
+  touch-action: none;
   user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   font-variant-emoji: emoji;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;

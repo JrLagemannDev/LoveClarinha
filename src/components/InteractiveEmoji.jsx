@@ -297,6 +297,7 @@ export default function InteractiveEmoji({
   const pointerState = useRef(null);
   const bodyRef = useRef(null);
   const [layer, setLayer] = useState(null);
+  const [isRegistered, setIsRegistered] = useState(false);
 
   useEffect(() => {
     setLayer(getEmojiLayer());
@@ -323,6 +324,9 @@ export default function InteractiveEmoji({
       const rect = wrapper.getBoundingClientRect();
 
       if (rect.width < 4 || rect.height < 4) {
+        bodies.delete(id);
+        bodyRef.current = null;
+        setIsRegistered(false);
         return;
       }
 
@@ -351,6 +355,7 @@ export default function InteractiveEmoji({
       bodies.set(id, body);
       bodyRef.current = body;
       syncElement(body);
+      setIsRegistered(true);
     }
 
     const resizeObserver = new ResizeObserver(registerBody);
@@ -361,6 +366,7 @@ export default function InteractiveEmoji({
       resizeObserver.disconnect();
       bodies.delete(id);
       bodyRef.current = null;
+      setIsRegistered(false);
       removeEmojiLayerIfEmpty();
     };
   }, [id, layer]);
@@ -369,6 +375,9 @@ export default function InteractiveEmoji({
     if (event.button !== 0 || !bodyRef.current) {
       return;
     }
+
+    event.preventDefault();
+    event.stopPropagation();
 
     const body = bodyRef.current;
     const now = performance.now();
@@ -398,6 +407,9 @@ export default function InteractiveEmoji({
     if (!body || !pointer) {
       return;
     }
+
+    event.preventDefault();
+    event.stopPropagation();
 
     const now = performance.now();
     const elapsed = Math.max(now - pointer.lastTime, 8);
@@ -429,6 +441,9 @@ export default function InteractiveEmoji({
     if (!body || !pointer) {
       return;
     }
+
+    event.preventDefault();
+    event.stopPropagation();
 
     body.dragging = false;
 
@@ -476,7 +491,7 @@ export default function InteractiveEmoji({
         aria-hidden="true"
         className="block transition-transform duration-150 group-hover:scale-110 group-focus-visible:scale-110"
       >
-        {symbol}
+      {symbol}
       </span>
     </button>
   );
@@ -488,7 +503,7 @@ export default function InteractiveEmoji({
       style={style}
       aria-hidden="true"
     >
-      {layer ? createPortal(emojiButton, layer) : null}
+      {layer && isRegistered ? createPortal(emojiButton, layer) : null}
     </span>
   );
 }
