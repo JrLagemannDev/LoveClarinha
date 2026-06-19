@@ -26,7 +26,12 @@ export default function Stories() {
             }`}
             style={
               story.image
-                ? { backgroundImage: `url(${story.image})` }
+                ? {
+                    backgroundImage: `url(${story.image})`,
+                    ...(story.imagePosition
+                      ? { backgroundPosition: story.imagePosition }
+                      : {}),
+                  }
                 : undefined
             }
           >

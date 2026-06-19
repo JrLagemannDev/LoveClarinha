@@ -22,9 +22,27 @@ P.S.: A menina anônima viu tudo e saiu fora. 😬`,
   },
   {
     id: 'risada-favorita',
-    date: 'Uma memoria leve',
-    title: 'A risada que melhora qualquer dia',
-    text: '',
+    date: 'Duas semanas depois',
+    title: 'Primeiro encontro',
+    image: '/stories-primeiro-encontro.jpg',
+    imagePosition: '58% top',
+    text: `Lembro do sentimento forte que tive no dia seguinte depois que nos conhecemos. Nunca tinha sentido meu peito daquele jeito. Mesmo de ressaca e morrendo de sono, eu estava extremamente feliz e ansioso para mandar mensagem para ela.
+
+Desde o começo, a gente sempre teve um humor parecido, ideias parecidas e uma facilidade enorme para conversar. Com isso, ficamos íntimos muito rápido.
+
+Marcamos nosso primeiro encontro para duas semanas depois daquele dia, novamente em São Paulo. Foi a primeira vez que fui para lá sozinho de ônibus rodoviário. Também peguei metrô pela primeira vez na vida e fui até a estação dela para nos encontrarmos.
+
+O nervosismo era enorme: perna tremendo, frio na barriga e tudo mais, afinal, eu estava indo encontrar a paulista que vi uma vez e por quem tinha me apaixonado em uma noitada em São Paulo.
+
+Quando cheguei na estação, me perguntei o que eu estava fazendo da minha vida naquele lugar. Mas, assim que vi ela, esse pensamento sumiu. O nervosismo passou e tudo que eu sentia era leveza e alegria.
+
+Fomos até a Paulista para eu conhecer melhor o lugar. Entramos em um shopping, passamos por um parque, tiramos fotos em pontos turísticos, incluindo um viaduto cheio de trânsito, e nos beijamos. No caminho para a lanchonete, comprei flores para ela.
+
+Depois, fomos comer o hambúrguer mais caro da minha vida. Eu paguei tudo, com uma dor fortíssima no bolso, mas feliz demais por estar ali.
+
+Conversamos sobre tudo, e o sentimento só aumentava a cada minuto que passava. Naquele dia, eu tive certeza de que ela era a mesma pessoa incrível que eu tinha conhecido na festa, e que todo o esforço tinha valido a pena.
+
+Voltei para casa triste por ir embora, mas com um sorriso bobo no rosto.`,
   },
   {
     id: 'detalhes-dela',
