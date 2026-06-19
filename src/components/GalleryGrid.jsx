@@ -44,9 +44,7 @@ export default function GalleryGrid({ title, description, photos }) {
             className="h-11 w-11"
           />
         </div>
-        <p className="mt-2 max-w-2xl text-ink/70">
-          {description} {photos.length} lembrancas guardadas aqui.
-        </p>
+        <p className="mt-2 max-w-2xl text-ink/70">{description}</p>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

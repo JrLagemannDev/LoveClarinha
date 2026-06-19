@@ -8,8 +8,7 @@ export default function Photos() {
     <section className="page-shell page-section">
       <SectionHeader
         eyebrow="nossas lembrancas"
-        title="Os sorrisos que eu quero guardar comigo"
-        description="Tem fotos suas e fotos nossas, porque algumas lembrancas ficam ainda mais bonitas quando eu posso olhar de novo."
+        title="Galeria da Clara"
         icon={Camera}
       />
 
@@ -21,7 +20,7 @@ export default function Photos() {
 
       <GalleryGrid
         title="Nos dois"
-        description="Momentos nossos que eu guardo com carinho, do jeitinho que aconteceram."
+        description="Momentos nossos que eu guardo com carinho."
         photos={usPhotos}
       />
     </section>
