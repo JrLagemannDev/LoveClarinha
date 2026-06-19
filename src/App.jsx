@@ -9,7 +9,6 @@ import { Suspense, lazy } from 'react';
 import Layout from './components/Layout.jsx';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 
-const Curiosities = lazy(() => import('./pages/Curiosities.jsx'));
 const Declarations = lazy(() => import('./pages/Declarations.jsx'));
 const Home = lazy(() => import('./pages/Home.jsx'));
 const Login = lazy(() => import('./pages/Login.jsx'));
@@ -43,14 +42,6 @@ export default function App() {
               <Route path="/filmes-series" element={<Watchlist />} />
               <Route path="/musicas" element={<Music />} />
               <Route path="/login" element={<Login />} />
-              <Route
-                path="/curiosidades"
-                element={
-                  <PrivateRoute>
-                    <Curiosities />
-                  </PrivateRoute>
-                }
-              />
               <Route
                 path="/declaracoes"
                 element={

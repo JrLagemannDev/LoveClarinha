@@ -46,26 +46,14 @@ Voltei para casa triste por ir embora, mas com um sorriso bobo no rosto.`,
   },
   {
     id: 'detalhes-dela',
-    date: 'Detalhes',
-    title: 'Coisas que so a Clarinha tem',
-    text: '',
   },
   {
     id: 'proximos-capitulos',
-    date: 'Ainda vem muito',
-    title: 'Os proximos capitulos',
-    text: '',
   },
   {
     id: 'historia-da-clarinha-um',
-    date: 'Para voce preencher',
-    title: 'Uma historia escrita pela Clarinha',
-    text: '',
   },
   {
     id: 'historia-da-clarinha-dois',
-    date: 'Seu espacinho',
-    title: 'Outro pedacinho para voce contar',
-    text: '',
   },
 ];

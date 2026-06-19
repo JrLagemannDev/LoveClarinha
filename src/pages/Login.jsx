@@ -17,7 +17,7 @@ export default function Login() {
     setError('');
 
     if (login(username, password)) {
-      navigate(location.state?.from ?? '/curiosidades');
+      navigate(location.state?.from ?? '/declaracoes');
       return;
     }
 
@@ -41,9 +41,6 @@ export default function Login() {
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Link to="/declaracoes" className="btn-primary">
                 Ver declaracoes
-              </Link>
-              <Link to="/curiosidades" className="btn-secondary">
-                Ver curiosidades
               </Link>
               <Link to="/historias" className="btn-secondary">
                 Editar historias

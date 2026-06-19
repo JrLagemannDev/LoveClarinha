@@ -10,7 +10,6 @@ import {
   Menu,
   Music2,
   Sparkles,
-  Stars,
   X,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -35,7 +34,6 @@ export default function Navbar() {
   const items = isLoggedIn
     ? [
         ...baseItems,
-        { to: '/curiosidades', label: 'Curiosidades', icon: Stars },
         { to: '/declaracoes', label: 'Declaracoes', icon: Sparkles },
       ]
     : [...baseItems, { to: '/login', label: 'Login', icon: LogIn }];
