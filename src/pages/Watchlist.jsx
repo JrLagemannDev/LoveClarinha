@@ -139,14 +139,14 @@ export default function Watchlist() {
     <section className="mx-auto w-full max-w-[92rem] px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-16">
       <SectionHeader
         eyebrow="filmes e séries"
-        title="Nossas notas, nossas opiniões e nossas maratonas"
-        description="Aqui ficam os filmes e séries que a gente viu, com a nota de cada um e o que cada experiência deixou na memória."
+        title="criticas cinefilas"
+        description="Aqui ficam os filmes e séries que a gente viu, com a nota de cada um."
         icon={Film}
       />
 
       <WatchSection
         title="Filmes"
-        description="Os filmes que entraram para a nossa lista, com a opinião do Junior e da Clara separadinhas."
+        description="Os filmes que entraram para a nossa lista, com a opinião do Junior e da Clara."
         items={moviesWatched}
         ariaLabel="Carrossel de filmes vistos"
         storageSection="filmes"
