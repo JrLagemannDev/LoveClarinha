@@ -10,7 +10,6 @@ export default function Stories() {
       <SectionHeader
         eyebrow="historias"
         title="Pequenos capitulos de uma historia bonita"
-        description="Algumas lembrancas mereciam virar palavras, porque tudo com voce fica mais facil de guardar no coracao."
         icon={BookHeart}
       />
 
