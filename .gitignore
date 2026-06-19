@@ -11,3 +11,5 @@ vite-dev.log
 vite-dev.err.log
 preview.log
 preview.err.log
+
+.vercel
