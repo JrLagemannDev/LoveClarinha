@@ -38,7 +38,7 @@ export default function Navbar() {
         { to: '/curiosidades', label: 'Curiosidades', icon: Stars },
         { to: '/declaracoes', label: 'Declaracoes', icon: Sparkles },
       ]
-    : [...baseItems, { to: '/login', label: 'Surpresa', icon: LogIn }];
+    : [...baseItems, { to: '/login', label: 'Login', icon: LogIn }];
 
   function handleLogout() {
     logout();
