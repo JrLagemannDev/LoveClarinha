@@ -4,6 +4,7 @@ export const stories = [
     date: 'Comeco de tudo',
     title: 'Como nos conhecemos',
     image: '/stories-como-nos-conhecemos-foto-1.jpg',
+    imageAspectRatio: '3 / 4',
     text: `Certo dia, eu e meus amigos fomos para mais um dos rolês que começamos a fazer todo mês em São Paulo, dessa vez em uma festa universitária em Itaquera.
 
 Antes de ir, ouvi seu nome pela primeira vez. A namorada do meu amigo comentou sobre você depois que eu perguntei, meio na brincadeira, se ela tinha alguma amiga para me apresentar. Ela disse: “Tenho a Clara, ela é muito legal, acho que você vai gostar dela.” Na hora, nem dei muita atenção, porque eu só tinha perguntado por brincadeira.
@@ -26,6 +27,7 @@ P.S.: A menina anônima viu tudo e saiu fora. 😬`,
     title: 'Primeiro encontro',
     image: '/stories-primeiro-encontro.jpg',
     imagePosition: '58% top',
+    imageAspectRatio: '4 / 3',
     text: `Lembro do sentimento forte que tive no dia seguinte depois que nos conhecemos. Nunca tinha sentido meu peito daquele jeito. Mesmo de ressaca e morrendo de sono, eu estava extremamente feliz e ansioso para mandar mensagem para ela.
 
 Desde o começo, a gente sempre teve um humor parecido, ideias parecidas e uma facilidade enorme para conversar. Com isso, ficamos íntimos muito rápido.

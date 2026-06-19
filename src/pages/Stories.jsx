@@ -17,6 +17,13 @@ export default function Stories() {
         {stories.map((story) => {
           const isBlankStory =
             !story.date && !story.title && !story.text && !story.image;
+          const storyStyle = story.image
+            ? {
+                '--story-image': `url(${story.image})`,
+                '--story-position': story.imagePosition ?? 'center top',
+                '--story-aspect-ratio': story.imageAspectRatio ?? '4 / 3',
+              }
+            : undefined;
 
           return (
             <article
@@ -24,18 +31,18 @@ export default function Stories() {
               className={`card card-hover readable-card overflow-hidden p-0 ${
                 story.image ? 'story-image-card md:col-span-2' : ''
               } ${isBlankStory ? 'min-h-48' : ''}`}
-              style={
-                story.image
-                  ? {
-                      '--story-image': `url(${story.image})`,
-                      ...(story.imagePosition
-                        ? { backgroundPosition: story.imagePosition }
-                        : {}),
-                    }
-                  : undefined
-              }
+              style={storyStyle}
               aria-label={isBlankStory ? 'Historia em branco' : undefined}
             >
+              {story.image && (
+                <div className="story-card-photo">
+                  <img
+                    src={story.image}
+                    alt={story.title ? `Foto de ${story.title}` : ''}
+                    loading="lazy"
+                  />
+                </div>
+              )}
               <div
                 className={`story-card-content p-5 sm:p-6 md:p-8 ${
                   isBlankStory ? 'flex min-h-48 items-start' : ''
